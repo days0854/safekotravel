@@ -3,8 +3,7 @@ import { AIPlanRequest, AIPlanResponse, TravelStyle } from "../types";
 
 // Initialize Gemini Client
 // IMPORTANT: process.env.API_KEY is assumed to be available in the environment
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_AI_API_KEY });
 export const generateTravelPlan = async (request: AIPlanRequest): Promise<AIPlanResponse> => {
   const modelId = "gemini-3-flash-preview";
   
